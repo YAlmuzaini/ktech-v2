@@ -491,15 +491,22 @@ function required() {
   }
 }
 
-// // First we detect the click event
-// document.getElementById("hamburger-button").addEventListener("click", function () {
-  
-//   if (document.getElementById("nav-header").classList.contains("nav-sleep")) {
-//     // The box that we clicked has a class of bad so let's remove it and add the good class
-//     this.classList.remove("bad");
-//     this.classList.add("good");
-//   } else {
-//     // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-//     alert("You can proceed!");
-//   }
-// });
+document.getElementById("hamburger-button").addEventListener("click", () => {
+  if (document.getElementById("nav-header").style.height == "100%") {
+    document.getElementById("nav-header").style.height = "0%";
+  } else {
+    document.getElementById("nav-header").style.height = "100%";
+  }
+
+  if (document.getElementById("header-container").style.height == "100vh") {
+    document.getElementById("header-container").style.height = "0vh";
+  } else {
+    document.getElementById("header-container").style.height = "100vh";
+  }
+
+  if (document.getElementById("header").style.height == "100%") {
+    document.getElementById("header").style.height = "0%";
+  } else {
+    document.getElementById("header").style.height = "100%";
+  }
+});

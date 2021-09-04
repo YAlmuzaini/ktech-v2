@@ -198,7 +198,7 @@ h6 {
 
 .site-header {
   width: 100%;
-  height: 100%;
+  height: 0%;
   position: absolute;
   top: 0;
   left: 0;
@@ -214,19 +214,20 @@ h6 {
 
 .site-header {
   z-index: 10;
-  /* visibility: hidden; */
 }
 
 .header-container {
-  height: 100vh;
+  height: 0vh;
   width: 100vw;
+  transition: height 0.5s linear;
   padding: 0;
   margin: 0;
   position: fixed;
 }
 
 .header {
-  height: 100%;
+  height: 0%;
+  transition: height 0.5s linear;
   position: relative;
   overflow: hidden;
 }
@@ -3592,6 +3593,7 @@ footer {
     padding-top: 10px;
     padding-left: 48px;
     padding-right: 48px;
+    min-height: 90px;
   }
 }
 
