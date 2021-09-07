@@ -60,7 +60,7 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    let header = select("#header");
+    let header = select("#navigation-bar");
     let offset = header.offsetHeight;
 
     if (!header.classList.contains("header-scrolled")) {
@@ -77,7 +77,7 @@
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
    */
-  let selectHeader = select("#header");
+  let selectHeader = select("#navigation-bar");
   if (selectHeader) {
     const headerScrolled = () => {
       if (window.scrollY > 100) {
@@ -516,5 +516,11 @@ document.getElementById("hamburger-button").addEventListener("click", () => {
     document.getElementById("header").style.height = "0%";
   } else {
     document.getElementById("header").style.height = "100%";
+  }
+
+  if (document.querySelector("body").style.overflow == "visible") {
+    document.querySelector("body").style.overflowY = "hidden";
+  } else {
+    document.querySelector("body").style.overflowY = "visible";
   }
 });

@@ -216,7 +216,7 @@ h6 {
   z-index: 10;
 }
 
-.site-header .logo {
+.site-header #navigation-bar .logo {
   font-size: 32px;
   margin: 0px 40px 0px 25px;
   padding: 0;
@@ -225,11 +225,11 @@ h6 {
   letter-spacing: 2px;
 }
 
-.site-header .logo a {
+.site-header #navigation-bar .logo a {
   color: #fff;
 }
 
-.site-header .logo img {
+.site-header #navigation-bar .logo img {
   margin-top: 20px;
   max-height: 40px;
   animation: fadeIn linear 0.2s;
@@ -237,6 +237,11 @@ h6 {
   -moz-animation: fadeIn linear 0.2s;
   -o-animation: fadeIn linear 0.2s;
   -ms-animation: fadeIn linear 0.2s;
+}
+
+#navigation-bar.header-scrolled {
+  background: rgba(21, 34, 43, 0.85);
+  padding-bottom: 10px;
 }
 
 @keyframes fadeIn {
@@ -290,7 +295,6 @@ h6 {
   transition: height 0.5s linear;
   padding: 0;
   margin: 0;
-  position: fixed;
 }
 
 .header {
@@ -484,36 +488,6 @@ h6 {
   }
 }
 
-/* #header {
-  transition: all 0.1s;
-  z-index: 997;
-  padding: 20px 0;
-  position:fixed;
-}
-
-#header.header-scrolled,
-#header.header-inner-pages {
-  background: rgba(21, 34, 43, 0.85);
-  padding: 18px 0;
-}
-
-#header .logo {
-  font-size: 32px;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-#header .logo a {
-  color: #fff;
-}
-
-#header .logo img {
-  max-height: 40px;
-} */
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -671,110 +645,6 @@ h6 {
   }
 }
 
-/**
-* Mobile Navigation 
-*/
-.mobile-nav-toggle {
-  color: #fff;
-  font-size: 28px;
-  cursor: pointer;
-  display: none;
-  line-height: 0;
-  transition: 0.5s;
-}
-
-/* change */
-@media (max-width: 1280px) {
-  .mobile-nav-toggle {
-    display: block;
-  }
-  .navbar ul {
-    display: none;
-  }
-}
-
-.navbar-mobile {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(4, 7, 9, 0.9);
-  transition: 0.3s;
-  z-index: 999;
-}
-
-.navbar-mobile .mobile-nav-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.navbar-mobile ul {
-  display: block;
-  position: absolute;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 0;
-  border-radius: 10px;
-  background-color: #fff;
-  overflow-y: auto;
-  transition: 0.3s;
-}
-
-.navbar-mobile a {
-  padding: 10px 20px;
-  font-size: 15px;
-  color: #15222b;
-}
-
-.navbar-mobile a:hover,
-.navbar-mobile .active,
-.navbar-mobile li:hover > a {
-  color: var(--color-theme);
-}
-
-.navbar-mobile .getstarted {
-  margin: 15px;
-}
-
-.navbar-mobile .dropdown ul {
-  position: static;
-  display: none;
-  margin: 10px 20px;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 1;
-  visibility: visible;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-}
-
-.navbar-mobile .dropdown ul li {
-  min-width: 200px;
-}
-
-.navbar-mobile .dropdown ul a {
-  padding: 10px 20px;
-}
-
-.navbar-mobile .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover > a {
-  color: var(--color-theme);
-}
-
-.navbar-mobile .dropdown > .dropdown-active {
-  display: block;
-}
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -789,7 +659,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(13, 20, 26, 0.7);
+  background: hsla(208, 32%, 8%, 0.568);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -808,10 +678,6 @@ h6 {
   align-items: center;
   flex-direction: column;
   text-align: center;
-}
-
-#hero .fw-bolder-cce {
-  font-family: var(--font-Dazzed-SemiBold);
 }
 
 #hero h1 {
@@ -3485,6 +3351,12 @@ footer {
 /*--------------------------------------------------------------
 # News Section
 --------------------------------------------------------------*/
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+}
+
 .events-container {
   position: absolute;
   bottom: 0;
