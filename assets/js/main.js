@@ -492,6 +492,14 @@ function required() {
 }
 
 document.getElementById("hamburger-button").addEventListener("click", () => {
+  if (document.querySelector(".site-header .logo").style.display == "none") {
+    setTimeout(() => {
+      document.querySelector(".site-header .logo").style.display = "block";
+    }, 500);
+  } else {
+    document.querySelector(".site-header .logo").style.display = "none";
+  }
+
   if (document.getElementById("nav-header").style.height == "100%") {
     document.getElementById("nav-header").style.height = "0%";
   } else {
