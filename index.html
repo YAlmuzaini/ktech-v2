@@ -113,15 +113,24 @@
 
       <div class="site-content">
         <!-- ======= Hero Section ======= -->
-        <section
-          id="hero"
-          style="background-image: url('assets/img/hero-bg.jpg')"
-        >
-          <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-            <h1>Welcome to ktech</h1>
+        <section id="landing-page">
+          <section
+            id="hero"
+            style="background-image: url('assets/img/hero-bg.jpg')"
+          >
+            <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+              <h1>Welcome to ktech</h1>
+            </div>
+          </section>
+          <!-- End Hero -->
 
+          <div id="landing-page-bottom">
             <!-- ======= Event Date Section ======= -->
-            <div class="events-container d-none d-sm-block w-100">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="150"
+              class="events-container d-none d-sm-block w-100"
+            >
               <div class="events">
                 <div class="events_inner">
                   <div class="events_innermost">
@@ -180,17 +189,35 @@
             </div>
             <!-- ======= End Event Date Section ======= -->
 
+            <!-- ======= Bottom Nav Section ======= -->
             <div class="container-fluid bottom-nav-container">
-              <div class="row row-cols-4 text-white fw-bold bottom-nav pt-3">
-                <div class="col">test</div>
-                <div class="col">test</div>
-                <div class="col">test</div>
-                <div class="col">test</div>
+              <div
+                class="
+                  row row-cols-md-4 row-cols-sm-2
+                  text-white
+                  bottom-nav
+                  text-uppercase
+                  pt-3
+                  text-center
+                "
+              >
+                <div class="col d-none d-md-block">
+                  <a href="#" class="bottom-nav-anchor">Admission</a>
+                </div>
+                <div class="col d-none d-md-block">
+                  <a href="" class="bottom-nav-anchor">Alumni</a>
+                </div>
+                <div class="col">
+                  <a href="" class="bottom-nav-anchor">My Portal</a>
+                </div>
+                <div class="col">
+                  <a href="" class="bottom-nav-anchor">My LMS</a>
+                </div>
               </div>
             </div>
+            <!-- ======= End Bottom Nav Section ======= -->
           </div>
         </section>
-        <!-- End Hero -->
       </div>
     </div>
     <!-- Vendor JS Files -->
