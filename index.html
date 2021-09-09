@@ -28,17 +28,19 @@
     <div class="site-container">
       <header id="nav-header" class="site-header">
         <div id="navigation-bar" class="position-fixed">
-          <a
-            href="index.html"
-            class="logo"
-            data-aos="fade-right"
-            data-aos-delay="150"
-            style="display: block"
-            ><img
-              src="assets/img/ktech-logos/svgs/logo3.png"
-              alt=""
-              class="img-fluid"
-          /></a>
+          <div class="navigation-logo">
+            <a
+              href="index.html"
+              class="logo"
+              data-aos="fade-right"
+              data-aos-delay="150"
+              style="display: block"
+              ><img
+                src="assets/img/ktech-logos/svgs/logo3.png"
+                alt=""
+                class="img-fluid"
+            /></a>
+          </div>
           <div id="header-container" class="header-container">
             <div id="header" class="header">
               <input type="checkbox" id="hamburger-button" autocomplete="off" />
@@ -112,24 +114,54 @@
       <!-- ======= End Nav Section ======= -->
 
       <div class="site-content">
-        <!-- ======= Hero Section ======= -->
         <section id="landing-page">
-          <section
-            id="hero"
-            style="background-image: url('assets/img/hero-bg.jpg')"
-          >
-            <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-              <h1>Welcome to ktech</h1>
+          <!-- ======= Hero Section ======= -->
+          <div class="hero-slider swiper-container">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide">
+                <div class="hero-section">
+                  <div
+                    id="hero"
+                    class="d-flex align-items-center"
+                    style="
+                      background: url('assets/img/hero-bg.jpg') top center
+                        no-repeat;
+                    "
+                  >
+                    <div
+                      class="container"
+                      data-aos="zoom-out"
+                      data-aos-delay="100"
+                    >
+                      <div class="row hero-text">
+                        <div class="col-xl-6 pt-5 mt-5 ms-2">
+                          <h1>Bettter digital experience with Presento</h1>
+                          <h2>
+                            We are team of talented designers making websites
+                            with Bootstrap
+                          </h2>
+                          <a href="#" class="btn-get-started scrollto"
+                            >Get Started</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Hero -->
+              </div>
             </div>
-          </section>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
+          </div>
           <!-- End Hero -->
 
           <div id="landing-page-bottom">
             <!-- ======= Event Date Section ======= -->
             <div
               data-aos="fade-up"
-              data-aos-delay="150"
-              class="events-container d-none d-sm-block w-100"
+              data-aos-delay="100"
+              class="events-container w-100"
             >
               <div class="events">
                 <div class="events_inner">

@@ -235,6 +235,28 @@
   });
 
   /**
+   * Hero Slider
+   */
+  new Swiper(".hero-slider", {
+    speed: 1000,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: "auto",
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+  });
+
+  /**
    * media gallary release slider
    */
   new Swiper(".press-releases-slider", {
@@ -492,6 +514,7 @@ function required() {
 }
 
 document.getElementById("hamburger-button").addEventListener("click", () => {
+  //uncomment .navigation-logo in css if you want to make it normal
   if (document.querySelector(".site-header .logo").style.display == "none") {
     setTimeout(() => {
       document.querySelector(".site-header .logo").style.display = "block";
