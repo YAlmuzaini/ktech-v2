@@ -296,14 +296,14 @@ h6 {
 .header-container {
   height: 0vh;
   width: 100vw;
-  transition: height 0.25s linear;
+  transition: height 0.10s linear;
   padding: 0;
   margin: 0;
 }
 
 .header {
   height: 0%;
-  transition: height 0.25s linear;
+  transition: height 0.10s linear;
   position: relative;
   overflow: hidden;
 }
@@ -554,7 +554,7 @@ h6 {
 
 .site-content #landing-page-bottom {
   position: absolute;
-  top: 740px;
+  /* top: 740px; */
   right: 0;
   left: 0;
   bottom: 0;
@@ -564,7 +564,7 @@ h6 {
 @media (max-width: 900px) {
   .site-content #landing-page-bottom {
     position: absolute;
-    top: 700px;
+    /* top: 700px; */
     right: 0;
     left: 0;
     bottom: 0;
