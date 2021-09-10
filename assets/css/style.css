@@ -581,7 +581,7 @@ h6 {
   background-position: center;
   position: relative;
   /* position: absolute; */
-  bottom: 200px;
+  bottom: 22vh;
   padding: 0;
 }
 
@@ -697,7 +697,7 @@ h6 {
 
 @media (max-width: 900px) {
   #hero {
-    bottom: 235px;
+    bottom: 28vh;
   }
 }
 
