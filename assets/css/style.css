@@ -232,11 +232,11 @@ h6 {
 .site-header #navigation-bar .logo img {
   margin-top: 20px;
   max-height: 40px;
-  animation: fadeIn linear 0.5s;
-  -webkit-animation: fadeIn linear 0.5s;
-  -moz-animation: fadeIn linear 0.5s;
-  -o-animation: fadeIn linear 0.5s;
-  -ms-animation: fadeIn linear 0.5s;
+  animation: fadeIn linear 0.2s;
+  -webkit-animation: fadeIn linear 0.2s;
+  -moz-animation: fadeIn linear 0.2s;
+  -o-animation: fadeIn linear 0.2s;
+  -ms-animation: fadeIn linear 0.2s;
 }
 
 #navigation-bar.header-scrolled {
@@ -296,14 +296,14 @@ h6 {
 .header-container {
   height: 0vh;
   width: 100vw;
-  transition: height 0.1s linear;
+  transition: height 0.55s linear;
   padding: 0;
   margin: 0;
 }
 
 .header {
   height: 0%;
-  transition: height 0.1s linear;
+  transition: height 0.55s linear;
   position: relative;
   overflow: hidden;
 }
@@ -554,8 +554,7 @@ h6 {
 
 .site-content #landing-page-bottom {
   position: absolute;
-  /* top: 740px; */
-  top: 0;
+  top: 740px;
   right: 0;
   left: 0;
   bottom: 0;
@@ -565,7 +564,7 @@ h6 {
 @media (max-width: 900px) {
   .site-content #landing-page-bottom {
     position: absolute;
-    /* top: 700px; */
+    top: 700px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -575,14 +574,18 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.hero-section {
+  width: 100%;
+  height: 100%;
+}
+
 #hero {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: center;
   position: relative;
-  /* position: absolute; */
-  bottom: 28vh;
+  bottom: 200px;
   padding: 0;
 }
 
@@ -698,7 +701,7 @@ h6 {
 
 @media (max-width: 900px) {
   #hero {
-    bottom: 50vh;
+    bottom: 235px;
   }
 }
 
