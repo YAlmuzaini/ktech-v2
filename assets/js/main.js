@@ -78,17 +78,6 @@
    * Toggle .header-scrolled class to #header when page is scrolled
    */
   let selectHeader = select("#navigation-bar");
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add("header-scrolled");
-      } else {
-        selectHeader.classList.remove("header-scrolled");
-      }
-    };
-    window.addEventListener("load", headerScrolled);
-    onscroll(document, headerScrolled);
-  }
 
   /**
    * Back to top button
@@ -175,291 +164,6 @@
   }
 
   /**
-   * Testimonials slider
-   */
-  new Swiper(".testimonials-slider", {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  });
-
-  function getCurrentScroll() {
-    return window.pageYOffset || document.documentElement.scrollTop;
-  }
-
-  /**
-   * courses slider
-   */
-  new Swiper(".courses-slider", {
-    speed: 600,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-
-      991: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
-  });
-
-  /**
-   * Hero Slider
-   */
-  new Swiper(".hero-slider", {
-    speed: 1000,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  });
-
-  /**
-   * media gallary release slider
-   */
-  new Swiper(".press-releases-slider", {
-    speed: 600,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-
-      991: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-
-      1200: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-    },
-  });
-
-  /**
-   * Clients Slider
-   */
-  new Swiper(".clients-slider", {
-    speed: 400,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 40,
-      },
-      480: {
-        slidesPerView: 3,
-        spaceBetween: 60,
-      },
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 80,
-      },
-      992: {
-        slidesPerView: 6,
-        spaceBetween: 120,
-      },
-    },
-  });
-
-  /**
-   * Our success stories Slider
-   */
-  new Swiper(".success-stories-slider", {
-    speed: 400,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-
-      991: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
-  });
-
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener("load", () => {
-    let portfolioContainer = select(".portfolio-container");
-
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
-      });
-
-      let portfolioFilters = select("#portfolio-flters li", true);
-
-      on(
-        "click",
-        "#portfolio-flters li",
-        function (e) {
-          e.preventDefault();
-          portfolioFilters.forEach(function (el) {
-            el.classList.remove("filter-active");
-          });
-          this.classList.add("filter-active");
-
-          portfolioIsotope.arrange({
-            filter: this.getAttribute("data-filter"),
-          });
-          portfolioIsotope.on("arrangeComplete", function () {
-            AOS.refresh();
-          });
-        },
-        true
-      );
-    }
-  });
-
-  /**
-   * Media Gallary isotope and filter
-   */
-  window.addEventListener("load", () => {
-    let mediaGallaryContainer = select(".media-gallary-container");
-    if (mediaGallaryContainer) {
-      let mediaGallayIsotope = new Isotope(mediaGallaryContainer, {
-        itemSelector: ".media-gallary-item",
-        layoutMode: "fitRows",
-      });
-
-      let mediaGallayFilter = select("#media-gallary-filters li", true);
-
-      on(
-        "click",
-        "#media-gallary-filters li",
-        function (e) {
-          e.preventDefault();
-          mediaGallayFilter.forEach(function (el) {
-            el.classList.remove("filter-active");
-          });
-          this.classList.add("filter-active");
-
-          mediaGallayIsotope.arrange({
-            filter: this.getAttribute("data-filter"),
-          });
-          mediaGallayIsotope.on("arrangeComplete", function () {
-            AOS.refresh();
-          });
-        },
-        true
-      );
-    }
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper(".portfolio-details-slider", {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  });
-
-  /**
    * Animation on scroll
    */
   window.addEventListener("load", () => {
@@ -470,80 +174,75 @@
       mirror: false,
     });
   });
-})();
 
-///*my main js*///
+  new fullpage("#fullpage", {
+    //options here
+    autoScrolling: true,
+    scrollHorizontally: true,
+    anchors: ["firstPage", "secondPage", "thirdPage", "fourthPage"],
+    afterLoad: function (origin, destination, direction) {
+      var leavingSection = this;
+      var mysection = fullpage_api.getActiveSection();
+      if (selectHeader) {
+        if (mysection.index > 0) {
+          selectHeader.classList.add("header-scrolled");
+        } else {
+          selectHeader.classList.remove("header-scrolled");
+        }
+      }
 
-// Get all sections that have an ID defined
-const sections = document.querySelectorAll(".inner-content section[id]");
-
-// Add an event listener listening for scroll
-window.addEventListener("scroll", navHighlighter);
-
-function navHighlighter() {
-  // Get current scroll position
-  let scrollY = window.pageYOffset;
-
-  // loop through sections to get height, top and ID values for each
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 90;
-    sectionId = current.getAttribute("id");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".sidebar-sticky .activeSide a[href*=" + sectionId + "]")
-        .classList.add("sideBarActive");
-    } else {
-      document
-        .querySelector(".sidebar-sticky .activeSide a[href*=" + sectionId + "]")
-        .classList.remove("sideBarActive");
-    }
+      select("#nav-menuBtn").addEventListener("click", () => {
+        if (select("#nav-menuBtn").checked) {
+          fullpage_api.setAllowScrolling(false);
+        } else {
+          fullpage_api.setAllowScrolling(true);
+        }
+      });
+    },
   });
-}
 
-function required() {
-  var empt = document.forms["searchFormNav"]["keyword"].value;
-  if (empt == "") {
-    document.getElementById("searchFormBtn").disabled = true;
-    return false;
-  } else {
-    document.getElementById("searchFormBtn").disabled = false;
-    return true;
-  }
-}
+  let side1 = document.querySelector(".nav-side-right");
+  let side2 = document.querySelector(".nav-side-left");
+  let overlay = document.querySelector(".nav-menu_overlay");
+  let open = document.querySelector(".fa-bars");
+  let close = document.querySelector(".fa-times");
+  let list = document.querySelectorAll(".nav-li");
+  let textSide2 = document.querySelector(".nav-textSide2");
+  let icon = document.querySelector(".nav-icon");
 
-document.getElementById("hamburger-button").addEventListener("click", () => {
-  //uncomment .navigation-logo in css if you want to make it normal
-  if (document.querySelector(".site-header .logo").style.display == "none") {
-    setTimeout(() => {
-      document.querySelector(".site-header .logo").style.display = "block";
-    }, 500);
-  } else {
-    document.querySelector(".site-header .logo").style.display = "none";
-  }
+  open.addEventListener("click", () => {
+    overlay.style.transform = "translateY(0%)";
+    side2.style.transform = "translateX(0%)";
+    side1.style.transform = "translateY(0%)";
+  });
 
-  if (document.getElementById("nav-header").style.height == "100%") {
-    document.getElementById("nav-header").style.height = "0%";
-  } else {
-    document.getElementById("nav-header").style.height = "100%";
-  }
+  close.addEventListener("click", () => {
+    overlay.style.transform = "translateY(-110%)";
+    side1.style.transform = "translateY(100%)";
+    side2.style.transform = "translateX(-100%)";
+  });
 
-  if (document.getElementById("header-container").style.height == "100vh") {
-    document.getElementById("header-container").style.height = "0vh";
-  } else {
-    document.getElementById("header-container").style.height = "100vh";
-  }
+  list.forEach((elem) => {
+    elem.addEventListener("mouseover", (e) => {
+      let val = e.target.textContent;
+      textSide2.textContent = val;
+      if (val == "Home") {
+        icon.innerHTML = `<i class="fas fa-home"></i>`;
+      }
+      if (val == "About") {
+        icon.innerHTML = `<i class="fas fa-user-ninja"></i>`;
+      }
+      if (val == "Projects") {
+        icon.innerHTML = `<i class="fas fa-code-branch"></i>`;
+      }
+      if (val == "Contact") {
+        icon.innerHTML = `<i class="fas fa-address-book"></i>`;
+      }
+    });
 
-  if (document.getElementById("header").style.height == "100%") {
-    document.getElementById("header").style.height = "0%";
-  } else {
-    document.getElementById("header").style.height = "100%";
-  }
-
-  if (document.querySelector("body").style.overflow == "visible") {
-    document.querySelector("body").style.overflowY = "hidden";
-  } else {
-    document.querySelector("body").style.overflowY = "visible";
-  }
-});
+    elem.addEventListener("mouseleave", (e) => {
+      textSide2.textContent = "";
+      icon.innerHTML = "";
+    });
+  });
+})();
