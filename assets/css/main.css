@@ -451,7 +451,7 @@ h6 {
 #hero .btn-get-started {
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.9em;
   display: inline-block;
   padding: 10px 35px 10px 35px;
   border-radius: 4px;
@@ -504,6 +504,10 @@ h6 {
     font-size: 1em;
     line-height: 20px;
     margin-bottom: 30px;
+  }
+
+  #hero .btn-get-started {
+    font-size: 0.75em;
   }
 }
 
