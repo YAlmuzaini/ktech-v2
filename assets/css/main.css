@@ -383,7 +383,82 @@ h6 {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 80%;
+  height: 100%;
+}
+
+.hero-section .fp-slides {
+  height: auto;
+}
+
+.fp-controlArrow.fp-prev,
+.fp-controlArrow.fp-next {
+  color: hsl(0, 0%, 0%, 0.2);
+  height: 60px;
+  border: solid 20px rgba(255, 255, 255, 0.2);
+  border-radius: 10%;
+}
+
+.fp-controlArrow.fp-prev::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: solid 20px rgba(255, 255, 255, 0.2);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  right: -15px;
+}
+
+.fp-controlArrow.fp-prev:hover::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: solid 20px rgba(255, 255, 255, 0.7);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  right: -15px;
+}
+
+.fp-controlArrow.fp-next::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: solid 20px rgba(255, 255, 255, 0.2);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  left: -15px;
+}
+
+.fp-controlArrow.fp-next:hover::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border: solid 20px rgba(255, 255, 255, 0.7);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  left: -15px;
+}
+
+.fp-controlArrow.fp-prev:hover,
+.fp-controlArrow.fp-next:hover {
+  color: hsl(0, 0%, 0%);
+  border: solid 20px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease-out;
 }
 
 #hero {
@@ -497,7 +572,7 @@ h6 {
 
 @media (max-width: 768px) {
   .hero-text {
-    top: 15vh;
+    top: -5vh;
   }
   #hero h1 {
     font-size: 2em;
@@ -531,10 +606,14 @@ h6 {
   #hero {
     bottom: 235px;
   }
-  .hero-section {
-    height: 70%;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    bottom: 70px;
   }
 }
+
 /*--------------------------------------------------------------
 # Event Nav
 --------------------------------------------------------------*/
@@ -750,6 +829,9 @@ h6 {
   line-height: 1.4;
   transition: transform 0.3s;
   hyphens: auto;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 600px) {

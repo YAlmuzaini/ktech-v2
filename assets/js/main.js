@@ -175,10 +175,12 @@
     });
   });
 
+  var g_interval;
   new fullpage("#fullpage", {
     //options here
     autoScrolling: true,
     scrollHorizontally: true,
+    slideSelector: ".mySlide",
     anchors: ["firstPage", "secondPage", "thirdPage", "fourthPage"],
     afterLoad: function (origin, destination, direction) {
       var leavingSection = this;
@@ -198,6 +200,15 @@
           fullpage_api.setAllowScrolling(true);
         }
       });
+
+      clearInterval(g_interval);
+      const lapse = 7000;
+
+      if (destination.item.querySelectorAll(".fp-slides").length) {
+        g_interval = setInterval(function () {
+          fullpage_api.moveSlideRight();
+        }, lapse);
+      }
     },
   });
 
