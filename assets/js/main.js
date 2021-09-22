@@ -78,7 +78,18 @@
    * Toggle .header-scrolled class to #header when page is scrolled
    */
   let selectHeader = select("#navigation-bar");
-
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add("header-scrolled");
+      } else {
+        selectHeader.classList.remove("header-scrolled");
+      }
+    };
+    window.addEventListener("load", headerScrolled);
+    onscroll(document, headerScrolled);
+  }
+  
   /**
    * Back to top button
    */
@@ -145,13 +156,13 @@
   /**
    * Scroll with ofset on page load with hash links in the url
    */
-  window.addEventListener("load", () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash);
-      }
-    }
-  });
+  // window.addEventListener("load", () => {
+  //   if (window.location.hash) {
+  //     if (select(window.location.hash)) {
+  //       scrollto(window.location.hash);
+  //     }
+  //   }
+  // });
 
   /**
    * Preloader
