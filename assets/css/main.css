@@ -13,10 +13,42 @@
   --color-page-white: hsl(230, 100%, 96%);
   --font-Dazzed-SemiBold: "Dazzed-SemiBold";
   --swiper-navigation-size: 35px;
-  --space: 4rem;
+  --space: 1rem;
   --space-xs: calc(var(--space) / 6);
   --space-sm: calc(var(--space) / 6);
   --space-md: calc(var(--space) * 1);
+
+  --header-height: 3.5rem;
+  --nav-width: 219px;
+
+  /*========== Colors ==========*/
+  --first-color-light: #f4f0fa;
+  --title-color: #19181b;
+  --text-color: #58555e;
+  --text-color-light: #a5a1aa;
+  --body-color: #f9f6fd;
+  --container-color: #ffffff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.75rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
 }
 
 @font-face {
@@ -1197,5 +1229,237 @@ h6 {
   }
   .breadcrumbs ol li {
     display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+.inner-page-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar-article {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: 40%;
+}
+
+.inner-sidebar {
+  --offset: 5rem;
+  flex-grow: 1;
+  flex-basis: 300px;
+  align-self: start;
+  position: sticky;
+  top: var(--offset);
+}
+
+.inner-sidebar-component {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.sidebar-header,
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space);
+  background: var(--color-page-white);
+}
+
+/* Until flexbox gap is supported in all modern browsers, we use the negative margin trick to create space between the children elements */
+.inner-page-main {
+  margin-bottom: calc(var(--space-md) * -1);
+  margin-left: calc(var(--space-md) * -1);
+}
+
+.inner-page-main > * {
+  margin-bottom: var(--space-md);
+  margin-left: var(--space-md);
+}
+
+.sidebar-article > * + * {
+  margin-top: var(--space);
+}
+
+.inner-sidebar-component {
+  position: relative;
+}
+
+/*========== NAV ==========*/
+.inner-side-nav {
+  top: 0;
+  left: -100%;
+  height: 100%;
+  padding: 1rem 1rem 0;
+  background-color: var(--container-color);
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+.side-nav__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  scrollbar-width: none; /* For mozilla */
+}
+
+/* For Google Chrome and others */
+.side-nav__container::-webkit-scrollbar {
+  display: none;
+}
+
+.side-nav__logo {
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2.5rem;
+}
+
+.side-nav__list,
+.side-nav__items {
+  display: grid;
+}
+
+.side-nav__list {
+  row-gap: 2.5rem;
+}
+
+.side-nav__items {
+  row-gap: 1.5rem;
+}
+
+.side-nav__subtitle {
+  font-size: var(--normal-font-size);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--text-color-light);
+}
+
+.side-nav__link {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.side-nav__link:hover {
+  color: var(--color-theme);
+}
+
+.side-nav__icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.side-nav__name {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+/* Dropdown */
+.side-nav__dropdown {
+  overflow: hidden;
+  max-height: 21px;
+  transition: 0.4s ease-in-out;
+}
+
+.side-nav__dropdown-collapse {
+  background-color: var(--first-color-light);
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+}
+
+.side-nav__dropdown-content {
+  display: grid;
+  row-gap: 0.5rem;
+  padding: 0.75rem 2.5rem 0.75rem 1.8rem;
+}
+
+.side-nav__dropdown-item {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+}
+
+.side-nav__dropdown-item:hover {
+  color: var(--color-theme);
+}
+
+.side-nav__dropdown-icon {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+/* Show dropdown collapse */
+.side-nav__dropdown:hover {
+  max-height: 100rem;
+}
+
+/* Rotate icon arrow */
+.side-nav__dropdown:hover .side-nav__dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/*===== Show menu =====*/
+.show-menu {
+  left: 0;
+}
+
+/*===== Active link =====*/
+.active {
+  color: var(--color-dark);
+}
+
+/* ========== MEDIA QUERIES ==========*/
+/* For small devices reduce search*/
+@media screen and (max-width: 320px) {
+  .header__search {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .inner-side-nav {
+    left: 0;
+    padding: 1.2rem 1.5rem 0;
+    /* Reduced navbar */
+    /* width: 68px; */
+  }
+  .side-nav__items {
+    row-gap: 1.7rem;
+  }
+  .side-nav__icon {
+    font-size: 1.3rem;
+  }
+
+  /* Element opacity */
+  /* .side-nav__logo-name,
+  .side-nav__name,
+  .side-nav__subtitle,
+  .side-nav__dropdown-icon {
+    opacity: 0;
+    transition: 0.3s;
+  } */
+
+  /* Navbar expanded */
+  /* .inner-side-nav:hover {
+    width: var(--nav-width);
+  } */
+
+  /* Visible elements */
+  .inner-side-nav:hover .side-nav__logo-name {
+    opacity: 1;
+  }
+  .inner-side-nav:hover .side-nav__subtitle {
+    opacity: 1;
+  }
+  .inner-side-nav:hover .side-nav__name {
+    opacity: 1;
+  }
+  .inner-side-nav:hover .side-nav__dropdown-icon {
+    opacity: 1;
   }
 }
