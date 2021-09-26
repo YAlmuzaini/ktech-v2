@@ -1289,7 +1289,9 @@ h6 {
   position: relative;
 }
 
-/*========== NAV ==========*/
+/*--------------------------------------------------------------
+# Sidebar Nav
+--------------------------------------------------------------*/
 .inner-side-nav {
   top: 0;
   left: -100%;
@@ -1307,6 +1309,41 @@ h6 {
   justify-content: space-between;
   overflow: auto;
   scrollbar-width: none; /* For mozilla */
+}
+
+.inner-sidebar-mobile-position {
+  display: none;
+  position: absolute;
+  left: 90%;
+  top: 50%;
+  z-index: 999;
+}
+
+#inner-sidebar-mobile {
+  display: none;
+}
+
+.inner-sidebar-mobile {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.inner-sidebar-mobile-circle {
+  position: relative;
+  right: 4px;
+  transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+input[name="inner-sidebar-mobile"]:checked ~ label .inner-sidebar-mobile {
+  transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
 }
 
 /* For Google Chrome and others */
@@ -1480,7 +1517,7 @@ h6 {
     padding: 1.2rem 1.5rem 0;
     /* Reduced navbar */
     width: 68px;
-    z-index: 999;
+    z-index: 900;
   }
 
   /* Navbar expanded */
@@ -1500,11 +1537,15 @@ h6 {
 }
 
 @media (max-width: 768px) {
-  .inner-sidebar {
-    display: none;
+  .inner-sidebar-mobile-position {
+    display: block;
   }
 
-  /* .inner-page-main {
-    margin-left: var(--space-sm);
-  } */
+  #inner-side-navbar {
+    visibility: hidden;
+  }
+
+  .inner-sidebar {
+    min-width: 10px;
+  }
 }
