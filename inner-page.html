@@ -200,7 +200,10 @@
       <aside class="inner-sidebar">
         <div class="inner-sidebar-component">
           <!--========== NAV ==========-->
-          <div class="inner-sidebar-mobile-position">
+          <div
+            id="inner-sidebar-mobile-toggle"
+            class="inner-sidebar-mobile-position"
+          >
             <input
               type="checkbox"
               autocomplete="off"
@@ -210,7 +213,7 @@
             <label for="inner-sidebar-mobile">
               <div class="inner-sidebar-mobile">
                 <div class="inner-sidebar-mobile-circle">
-                  <i class="bx bx-right-arrow-alt fw-bolder"></i>
+                  <i class="bx bx-right-arrow-alt"></i>
                 </div>
               </div>
             </label>
@@ -238,7 +241,7 @@
                     </a>
 
                     <div class="side-nav__dropdown">
-                      <a href="#" class="side-nav__link">
+                      <a class="side-nav__link">
                         <i class="bx bx-user side-nav__icon"></i>
                         <span class="side-nav__name">Profile</span>
                         <i
@@ -272,7 +275,49 @@
                     <h3 class="side-nav__subtitle">Admission</h3>
 
                     <div class="side-nav__dropdown">
-                      <a href="#" class="side-nav__link">
+                      <a class="side-nav__link">
+                        <i class="bx bx-bell side-nav__icon"></i>
+                        <span class="side-nav__name">Notifications</span>
+                        <i
+                          class="
+                            bx bx-chevron-down
+                            side-nav__icon side-nav__dropdown-icon
+                          "
+                        ></i>
+                      </a>
+
+                      <div class="side-nav__dropdown-collapse">
+                        <div class="side-nav__dropdown-content">
+                          <a href="#" class="side-nav__dropdown-item"
+                            >Blocked</a
+                          >
+                          <a href="#" class="side-nav__dropdown-item"
+                            >Silenced</a
+                          >
+                          <a href="#" class="side-nav__dropdown-item"
+                            >Publish</a
+                          >
+                          <a href="#" class="side-nav__dropdown-item"
+                            >Program</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <a href="#" class="side-nav__link">
+                      <i class="bx bx-compass side-nav__icon"></i>
+                      <span class="side-nav__name">Explore</span>
+                    </a>
+                    <a href="#" class="side-nav__link">
+                      <i class="bx bx-bookmark side-nav__icon"></i>
+                      <span class="side-nav__name">Saved</span>
+                    </a>
+                  </div>
+                  <div class="side-nav__items">
+                    <h3 class="side-nav__subtitle">Admission</h3>
+
+                    <div class="side-nav__dropdown">
+                      <a class="side-nav__link">
                         <i class="bx bx-bell side-nav__icon"></i>
                         <span class="side-nav__name">Notifications</span>
                         <i

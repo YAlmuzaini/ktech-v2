@@ -89,7 +89,7 @@
     window.addEventListener("load", headerScrolled);
     onscroll(document, headerScrolled);
   }
-  
+
   /**
    * Back to top button
    */
@@ -267,4 +267,32 @@
       icon.innerHTML = "";
     });
   });
+
+  /*==================== SHOW NAVBAR ====================*/
+  const showMenu = (headerToggle, navbarId, postionBtnId) => {
+    const toggleBtn = document.getElementById(headerToggle),
+      postionBtn = document.getElementById(postionBtnId),
+      nav = document.getElementById(navbarId);
+
+    // Validate that variables exist
+    if (headerToggle && navbarId && postionBtnId) {
+      toggleBtn.addEventListener("click", () => {
+        // We add the show-menu class to the div tag with the nav__menu class
+        nav.classList.toggle("show-menu");
+        // change icon
+        postionBtn.classList.toggle("btn-position-click");
+      });
+    }
+  };
+  showMenu("inner-sidebar-mobile", "inner-side-navbar", "inner-sidebar-mobile-toggle");
+
+  /*==================== LINK ACTIVE ====================*/
+  const linkColor = document.querySelectorAll(".side-nav__link");
+
+  function colorLink() {
+    linkColor.forEach((l) => l.classList.remove("active"));
+    this.classList.add("active");
+  }
+
+  linkColor.forEach((l) => l.addEventListener("click", colorLink));
 })();
