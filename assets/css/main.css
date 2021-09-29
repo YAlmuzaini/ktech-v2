@@ -1293,6 +1293,7 @@ h6 {
 # Sidebar Nav
 --------------------------------------------------------------*/
 .inner-side-nav {
+  position: fixed;
   top: 0;
   left: -100%;
   height: 100%;
@@ -1315,12 +1316,14 @@ h6 {
   display: none;
   position: absolute;
   left: 90%;
-  top: 50%;
+  top: 50px;
   z-index: 999;
+  transition: 0.3s;
 }
 
 .btn-position-click {
   left: 210px !important;
+  transition: 0.1s;
 }
 
 #inner-sidebar-mobile {
@@ -1346,6 +1349,10 @@ h6 {
   bottom: 1px;
 }
 
+input[name="inner-sidebar-mobile"] ~ label .inner-sidebar-mobile-circle i {
+  transition: 0.4s;
+}
+
 input[name="inner-sidebar-mobile"]:checked
   ~ label
   .inner-sidebar-mobile-circle
@@ -1354,6 +1361,7 @@ input[name="inner-sidebar-mobile"]:checked
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
+  transition: 0.4s;
 }
 
 /* For Google Chrome and others */
@@ -1453,7 +1461,8 @@ input[name="inner-sidebar-mobile"]:checked
 
 /*===== Show menu =====*/
 .show-menu {
-  visibility: visible !important;
+  opacity: 1 !important;
+  transition: 0.5s;
 }
 
 /*===== Active link =====*/
@@ -1555,7 +1564,6 @@ input[name="inner-sidebar-mobile"]:checked
     width: 220px;
   }
 
-  .inner-side-nav,
   .side-nav__logo-name,
   .side-nav__name,
   .side-nav__subtitle,
@@ -1566,7 +1574,8 @@ input[name="inner-sidebar-mobile"]:checked
   }
 
   #inner-side-navbar {
-    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
   }
 
   .inner-sidebar {
