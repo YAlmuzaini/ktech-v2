@@ -7,6 +7,7 @@
   --color-theme: #445db7;
   --color-hover: #bac2e8;
   --color-hover2: hsl(230, 100%, 90%);
+  --color-hover3: hsl(228, 100%, 93%);
   --color-title: #8893d3;
   --color-dark: #11173f;
   --color-dark-hover: #212e7e;
@@ -39,6 +40,30 @@
 
   /*========== z index ==========*/
   --z-fixed: 100;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-title);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-hover);
+  border: 0.2em solid var(--color-title);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hover3);
+}
+
+@supports (scrollbar-color: var(--color-hover) var(--color-title)) {
+  * {
+    scrollbar-color: var(--color-hover) var(--color-title);
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -780,7 +805,7 @@ h6 {
 .events .event .event_date {
   display: block;
   z-index: 2;
-  color: #445db7;
+  color: var(--color-theme);
   line-height: 1.3;
   transition: transform 0.3s, color 0.3s;
 }
