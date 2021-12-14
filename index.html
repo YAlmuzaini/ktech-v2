@@ -148,11 +148,7 @@
         </div>
         <div id="navigation-bar" class="nav-landing_page">
           <div class="navigation-logo">
-            <a
-              href="/"
-              class="logo"
-              data-aos="fade-right"
-              data-aos-delay="150"
+            <a href="/" class="logo" data-aos="fade-right" data-aos-delay="150"
               ><img
                 src="assets/img/ktech-logos/svgs/logo3.png"
                 alt=""
@@ -369,7 +365,23 @@
         </div>
         <!-- ======= End Bottom Nav Section ======= -->
       </div>
-      <div class="section" data-anchor="secondPage">section 2</div>
+      <div class="section" data-anchor="secondPage">
+        <div class="container-fluid">
+          <div class="row" style="height: 100vh;">
+            <div class="col-md-6">
+              <div style="border: solid 5px red;">One</div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div style="border: solid 5px red" class="h-100">Two</div>
+              </div>
+              <div class="row">
+                <div style="border: solid 5px red" class="h-100">Three</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="section" data-anchor="thirdPage">section 3</div>
       <div class="section" data-anchor="fourthPage">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
@@ -454,10 +466,13 @@
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/FullPage/fullpage.min.js"></script>
+    <script src="assets/vendor/FullPage/fullpage.extensions.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery-3.6.0.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.jquery.js"></script>
   </body>
 </html>
